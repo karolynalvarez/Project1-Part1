@@ -246,6 +246,7 @@
 				D9D736DE1E67F88C003C140D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
