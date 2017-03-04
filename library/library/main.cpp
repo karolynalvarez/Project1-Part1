@@ -4,7 +4,7 @@
 //
 //  Created by Karolyn Alvarez on 3/1/17.
 //  Copyright © 2017 Karolyn Alvarez. All rights reserved.
-//
+// James Wilson 
 
 #include <iostream>
 #include <string>
@@ -42,11 +42,11 @@ public:
         return description;
     }
     void displayBook(){
-        cout << "BOOK" << endl;
+        cout << endl << "BOOK" << endl;
         cout << "Title: " << title << endl;
         cout << "Author: " << author << endl;
         cout << "Description: " << description << endl;
-        cout << "--------------------" << endl;
+        cout << endl << endl;
     };
     
 };
@@ -72,10 +72,10 @@ public:
         return description;
     }
     void displayVHS(){
-        cout << "VHS" << endl;
+        cout << endl << "VHS" << endl;
         cout << "Title: " << title << endl;
         cout << "Description: " << description << endl;
-        cout << "--------------------" << endl;
+        cout << endl << endl;
     };
     
 };
@@ -101,10 +101,10 @@ public:
         return publisher;
     }
     void displayMagazine(){
-        cout << "MAGAZINE" << endl;
+        cout << endl << "MAGAZINE" << endl;
         cout << "Title: " << title << endl;
-        cout << "Publisher: #" << publisher << endl;
-        cout << "-------------------" << endl;
+        cout << "Publisher: " << publisher << endl;
+        cout << endl << endl;
     };
     
 };
@@ -144,6 +144,7 @@ void addToLibrary();
 Library newCollection;
 
 int main(){
+    cout << "Hello! This command line tool will allow you to create a collection of records using objects to store data. Lets get started!" << endl << endl;
     start();
     return 0;
 }
@@ -151,7 +152,7 @@ void start(){
     string userInput;
     string secondUserInput;
     
-    cout << "Would you like to add to the library?" << endl;
+    cout << "Would you like to add to the library?[Y/N]" << endl;
     getline(cin, userInput);
     if ( userInput == "Y" || userInput == "y"){
         addToLibrary();
@@ -161,14 +162,15 @@ void start(){
         if ( secondUserInput == "Y" || secondUserInput == "y") {
             newCollection.displayCollection();
         } else if ( secondUserInput == "N" || secondUserInput == "n"){
-            cout << "Thank you for using my library class program!" << endl;
+            cout << "Thanks for creating a library!" << endl;
             exit(0);
         } else {
-            cout << "Incorrect Input" << endl;
-            exit(0);
+            cout << "Incorrect Input, Try to add something to the library again." << endl;
+            start();
         }
     } else {
-        exit(0);
+        cout << "Incorrect Input, Try to add something to the library again." << endl;
+        start();
     }
     start();
 };
@@ -209,9 +211,8 @@ void addToLibrary(){
         newCollection.addMagazine(mag1);
         
     } else {
-        cout << "Incorrect Input" << endl;
-        exit(0);
+        cout << "Incorrect Input. Lets try again." << endl;
+        addToLibrary();
     }
-    
     
 }
